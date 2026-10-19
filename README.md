@@ -1,4 +1,7 @@
-# setup-darklua
+<div align="center">
+  <h1><code>setup-darklua</code></h1>
+  </p>
+</div>
 
 A GitHub Action that downloads and installs [darklua](https://github.com/seaofvoices/darklua) so it's available on `PATH` in later workflow steps.
 
