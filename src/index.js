@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import * as core from "@actions/core";
-import * as tc from "@actions/tool-cache";
 import { HttpClient } from "@actions/http-client";
+import * as tc from "@actions/tool-cache";
 
 const REPO = "seaofvoices/darklua";
 const TOOL_NAME = "darklua";
@@ -15,7 +15,7 @@ async function resolveVersion(requestedVersion) {
     const res = await http.getJson(
       `https://api.github.com/repos/${REPO}/releases/latest`,
     );
-    if (!res.result || !res.result.tag_name) {
+    if (!res.result?.tag_name) {
       throw new Error(
         "Could not determine the latest darklua release from the GitHub API",
       );
